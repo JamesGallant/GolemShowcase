@@ -12,10 +12,10 @@ on:
       - master
       - dev
 
-name: run-tests
+name: unit-tests
 
 jobs:
-  run-tests:
+  unit-tests:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
