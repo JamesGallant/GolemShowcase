@@ -1,5 +1,6 @@
 inst/doc
 .Rhistory
+.Rprofile
 .RData
 .Rproj.user
 GolemShowcase.Rproj
