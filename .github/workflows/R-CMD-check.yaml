@@ -5,33 +5,27 @@ on:
     branches:
       - main
       - master
-      - dev
   pull_request:
     branches:
       - main
       - master
-      - dev
 
 name: R-CMD-check
+
 jobs:
   R-CMD-check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: r-lib/actions/setup-r@v1
-      - uses: actions/cache@v1
-      - name: Cache packages
-        with:
-         path: ${{ env.RENV_PATHS_ROOT }}
-         key: ${{ runner.os }}-renv-${{ hashFiles('**/renv.lock') }}
-         restore-keys: |
       - name: Install dependencies
         run: |
+          install.packages(c("renv", "devtools"))
           renv::init()
           renv::snapshot()
         shell: Rscript {0}
       - name: Check
         run: |
-         devtools::test()
+          options(crayon.enabled = TRUE)
+          devtools::check()
         shell: Rscript {0}
-    
