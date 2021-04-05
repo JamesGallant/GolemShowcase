@@ -34,6 +34,7 @@ usethis::use_code_of_conduct()
 usethis::use_lifecycle_badge( "Experimental" )
 usethis::use_news_md( open = FALSE )
 usethis::use_vignette("GolemShowcase_docs")
+usethis::use_github_actions()
 
 ## Use git ----
 usethis::use_git()
