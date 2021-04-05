@@ -22,7 +22,7 @@ jobs:
       - uses: r-lib/actions/setup-r@v1
       
       - name: cache renv
-        - uses:  actions/cache@v2
+        uses:  actions/cache@v2
         with:
          path: ~/.local/share/renv
          key: ${{ runner.os }}-renv-${{ hashFiles('**/renv.lock') }}
