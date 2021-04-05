@@ -5,10 +5,12 @@ on:
     branches:
       - main
       - master
+      - dev
   pull_request:
     branches:
       - main
       - master
+      - dev
 
 name: R-CMD-check
 
@@ -27,5 +29,5 @@ jobs:
       - name: Check
         run: |
           options(crayon.enabled = TRUE)
-          devtools::check()
+          devtools::test()
         shell: Rscript {0}
